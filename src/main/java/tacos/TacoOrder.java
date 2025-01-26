@@ -5,9 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.ArrayList;
 
-import jakarta.validation.constraints.Digits;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
@@ -30,6 +28,7 @@ public class TacoOrder implements Serializable {
     private String deliveryCity;
 
     @NotBlank(message = "State is required")
+    @Size(max = 2, message = "Max count is 2")
     private String deliveryState;
 
     @NotBlank(message = "Zip code is required")

@@ -1,5 +1,4 @@
 package tacos.web;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Controller;
@@ -66,14 +65,17 @@ public class DesignTacoController {
     public TacoOrder order() {
         return new TacoOrder();
     }
+
     @ModelAttribute(name = "taco")
     public Taco taco() {
         return new Taco();
     }
+
     @GetMapping
     public String showDesignForm() {
         return "design";
     }
+
     private Iterable<Ingredient> filterByType(
             List<Ingredient> ingredients, Type type) {
         return ingredients
